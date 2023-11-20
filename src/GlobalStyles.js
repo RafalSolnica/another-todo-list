@@ -15,5 +15,7 @@ export const GlobalStyle = createGlobalStyle`
 
   body{
     font-family:"Lato";
+    padding:1rem;
+    
   }
 `;
