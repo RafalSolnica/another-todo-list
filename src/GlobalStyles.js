@@ -10,12 +10,14 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   :root{
-    color-scheme: dark light;
+    --clr-font:#ccc;
+    --clr-bg:#222;
   }
 
   body{
     font-family:"Lato";
     padding:1rem;
-    
+    color:var(--clr-font);
+    background:var(--clr-bg);
   }
 `;
