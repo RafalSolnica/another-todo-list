@@ -28,7 +28,7 @@ export const TaskItem = ({ task, setTasks }) => {
           onChange={(e) => toggletask(task.id, e.target.checked)}
         />
         {task.title}
-        <RemoveButton onClick={() => deleteTask(task.id)}>Delete</RemoveButton>
+        <RemoveButton onClick={() => deleteTask(task.id)}>Usuń</RemoveButton>
       </label>
     </StyledItem>
   );
