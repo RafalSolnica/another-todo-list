@@ -1,21 +1,22 @@
-import { useState } from "react";
-import {
-  StyledForm,
-  Row,
-  StyledButton,
-  RemoveButton,
-  StyledList,
-  ListItem,
-  Header,
-} from "./styled";
+import { useState, useRef } from "react";
+import { StyledForm, Row, StyledButton } from "./styled";
 
-export const Form = () => {
+export const NewTaskForm = ({ setTasks }) => {
   const [newItem, setNewItem] = useState("");
-  const [tasks, setTasks] = useState([]);
+  const inputRef = useRef(0);
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
+    if (newItem === "") return;
+
+    addTask();
+
+    setNewItem("");
+    inputRef.current.focus();
+  };
+
+  const addTask = () => {
     setTasks((currentTasks) => {
       return [
         ...currentTasks,
@@ -23,8 +24,6 @@ export const Form = () => {
       ];
     });
   };
-
-  console.log(tasks);
 
   return (
     <>
@@ -36,12 +35,11 @@ export const Form = () => {
             onChange={(e) => setNewItem(e.target.value)}
             type="text"
             id="item"
+            ref={inputRef}
           ></input>
         </Row>
         <StyledButton>Dodaj</StyledButton>
       </StyledForm>
-      <Header>Lista zadań</Header>
-      <StyledList></StyledList>
     </>
   );
 };
