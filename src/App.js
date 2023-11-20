@@ -1,10 +1,18 @@
 import { Container } from "./Container";
 import { NewTaskForm } from "./Form";
 import { TaskList } from "./TaskList";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 function App() {
-  const [tasks, setTasks] = useState([]);
+  const [tasks, setTasks] = useState(() => {
+    const localValue = localStorage.getItem("TASKS");
+    if (localValue == null) return [];
+    return JSON.parse(localValue);
+  });
+
+  useEffect(() => {
+    localStorage.setItem("TASKS", JSON.stringify(tasks));
+  }, [tasks]);
 
   return (
     <div className="App">
