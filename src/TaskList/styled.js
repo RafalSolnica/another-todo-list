@@ -21,7 +21,7 @@ export const ListItem = styled.li`
 
   & label {
     display: flex;
-    gap: 0.25rem;
+    gap: 0.4rem;
     cursor: pointer;
     align-items: center;
   }
