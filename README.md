@@ -1,4 +1,6 @@
-# Getting Started with Create React App
+# Todo list - Rafał Solnica
+
+This project was created by me to practice my react skills
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
