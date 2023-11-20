@@ -1,12 +1,11 @@
 import { Container } from "./Container";
+import { Form } from "./Form";
 
 function App() {
   return (
     <div className="App">
       <Container>
-        <header className="App-header">
-          <h1>Lista zadań</h1>
-        </header>
+        <Form />
       </Container>
     </div>
   );
