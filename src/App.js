@@ -1,18 +1,10 @@
 import { Container } from "./Container";
 import { NewTaskForm } from "./Form";
 import { TaskList } from "./TaskList";
-import { useState, useEffect } from "react";
+import { useLocalStorage } from "./useLocalStorage";
 
 function App() {
-  const [tasks, setTasks] = useState(() => {
-    const localValue = localStorage.getItem("TASKS");
-    if (localValue == null) return [];
-    return JSON.parse(localValue);
-  });
-
-  useEffect(() => {
-    localStorage.setItem("TASKS", JSON.stringify(tasks));
-  }, [tasks]);
+  const [tasks, setTasks] = useLocalStorage("TASKS", []);
 
   return (
     <div className="App">
